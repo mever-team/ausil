@@ -32,7 +32,7 @@ _001Mhf5lfE videos/_001Mhf5lfE/video.mp4
 
 * Run the following to extract the video features to the specified location.
 ```bash
-python extract_features.py -f='videos.txt' -o='features/'
+python extract_features.py --videos_file 'videos.txt' --output_dir 'features/'
 ```
 
 ### Calculate video similarities
@@ -83,5 +83,27 @@ python similarity_calculation.py --queries_file 'queries.txt' --database_file 'd
 * You can evaluate the performance of the model by providing the calculated similarities, the dataset annotation, the dataset ids and the label of the relevant videos, by executing the following command (example for FIVR-200K dataset): 
 
 ```bash
-python evaluation.py -r='similarities.json' -a='annotation.json' -d='youtube_ids.txt' -rl='DA'
+python evaluation.py --result_file 'similarities.json' --annotations_file 'annotation.json' --dataset_ids 'youtube_ids.txt' --relevant_labels 'DA'
 ```
+
+## Citation
+If you use this code for your research, please cite our paper.
+```
+@inproceedings{avgoustinakis2020audio,
+  title={Audio-based Near-Duplicate Video Retrieval with Audio Similarity Learning},
+  author={Avgoustinakis, Pavlos and Kordopatis-Zilos, Giorgos and Papadopoulos, Symeon and Symeonidis, Andreas L and Kompatsiaris, Ioannis},
+  journal={International Conference on Pattern Recognition (ICPR)},
+  year={2020}
+}
+
+```
+## Related Projects
+**[ViSiL](https://github.com/MKLab-ITI/visil)** **[FIVR-200K](https://github.com/MKLab-ITI/FIVR-200K)**
+
+## License
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details
+
+## Acknowledgement
+We want to thank the user [@anuragkr90](https://github.com/anuragkr90) 
+for providing their code and pretrained network publicly available in their
+[repo](https://github.com/anuragkr90/weak_feature_extractor).
